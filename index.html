@@ -3,23 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="element_lib/theme-chalk/index.css"/>
+
 </head>
 <body>
+
+
+  
 <div id="app">
-  <el-button @click="visible = true">Button</el-button>
-  <el-dialog :visible.sync="visible" title="Hello world">
-    <p>Try Element</p>
-  </el-dialog>
+  <!-- <el-button type="primary">Primary</el-button> -->
+  <el-select v-model="value" filterable placeholder="Select">
+    <el-option
+      v-for="item in options"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value"
+    />
+
 </div>
+
+
+
 </body>
 <script src="vue.js" type="text/javascript" charset="utf-8"></script>
 <script src="element_lib/index.js" type="text/javascript" charset="utf-8"></script>
 <script>
   new Vue({
     el: '#app',
-    data: function() {
-      return { visible: false }
-    }
+    //数据属性模块
+    data:{
+      startCompany:""
+    },
   })
+  
+
+
+
+
 </script>
+
+
 </html>
